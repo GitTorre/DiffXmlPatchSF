@@ -82,23 +82,23 @@ namespace DiffPatchXmlSF
             using (XmlWriter output = XmlWriter.Create(diffGramFilePath, settings))
             {
                 GenerateXmlDiffGram(currentVersionFilePath, latestVersionFilePath, output);
-
-                /* Remove changed values from old configs to support carry over to new version, which generally (not always) may have new elements. 
-                   This enables a master config's values to be preserved across app config upgrades of a Service Fabric app's base configuration (AppManifest and Settings). 
-                   Based on https://stackoverflow.com/questions/14341490/programmatic-xml-diff-merge-in-c-sharp */
-
-                XNamespace xd = "http://schemas.microsoft.com/xmltools/2002/xmldiff";
-                var xdoc = XDocument.Load(diffGramFilePath);
-
-                // xd:change -> match -> @DefaultValue is for ApplicationManifest.xml settings values.
-                // xd:change -> match -> @Value is for Settings.xml settings values.
-                // xd:remove enables bringing over existing elements from source config (current) - like for plugins - to the target config (latest).
-                xdoc.Root.Descendants(xd + "remove").Remove();
-                xdoc.Root.Descendants(xd + "change").Where(n => n.Attribute("match").Value == "@DefaultValue" || n.Attribute("match").Value == "@Value")?.Remove();
-                xdoc.Save(diffGramFilePath);
-
-                PatchXml(currentVersionFilePath, diffGramFilePath, patchedFilePath);
             }
+
+            /* Remove changed values from old configs to support carry over to new version, which generally (not always) may have new elements. 
+                This enables a master config's values to be preserved across app config upgrades of a Service Fabric app's base configuration (AppManifest and Settings). 
+                Based on https://stackoverflow.com/questions/14341490/programmatic-xml-diff-merge-in-c-sharp */
+
+            XNamespace xd = "http://schemas.microsoft.com/xmltools/2002/xmldiff";
+            var xdoc = XDocument.Load(diffGramFilePath);
+
+            // xd:change -> match -> @DefaultValue is for ApplicationManifest.xml settings values.
+            // xd:change -> match -> @Value is for Settings.xml settings values.
+            // xd:remove enables bringing over existing elements from source config (current) - like for plugins - to the target config (latest).
+            xdoc.Root.Descendants(xd + "remove").Remove();
+            xdoc.Root.Descendants(xd + "change").Where(n => n.Attribute("match").Value == "@DefaultValue" || n.Attribute("match").Value == "@Value")?.Remove();
+            xdoc.Save(diffGramFilePath);
+
+            PatchXml(currentVersionFilePath, diffGramFilePath, patchedFilePath);
         }
 
         private static void GenerateXmlDiffGram(string originalFile, string newFile, XmlWriter diffGramWriter)
