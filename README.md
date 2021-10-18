@@ -11,17 +11,17 @@ This supports the Windows-only nuget package [XmlDiffPatch](https://www.nuget.or
 
 Help:
 
-```DiffPatchXmlSF ? ```
+```XmlDiffPatchSF ? ```
 
 Diff/Patch ApplicationManifest.xml:
 
-``` DiffPatchXmlSF "C:\repos\FO\3.1.17\configs\ApplicationManifest.xml" "C:\repos\FO\3.1.18\configs\ApplicationManifest.xml" ``` 
+``` XmlDiffPatchSF "C:\repos\FO\3.1.17\configs\ApplicationManifest.xml" "C:\repos\FO\3.1.18\configs\ApplicationManifest.xml" ``` 
 
 The above command will produce a patched file, C:\repos\FO\3.1.18\configs\ApplicationManifest_patched.xml, containing any new settings for the latest version and carrying over the settings established in the earlier version. 
 
 You can optionally provide a third parameter which is the full path to the patched file: 
 
-``` DiffPatchXmlSF "C:\repos\FO\3.1.17\configs\ApplicationManifest.xml" "C:\repos\FO\3.1.18\configs\ApplicationManifest.xml" "C:\repos\FO\3.1.18\configs\ApplicationManifest.xml" ``` 
+``` XmlDiffPatchSF "C:\repos\FO\3.1.17\configs\ApplicationManifest.xml" "C:\repos\FO\3.1.18\configs\ApplicationManifest.xml" "C:\repos\FO\3.1.18\configs\ApplicationManifest.xml" ``` 
 
 The above command produces a patched version of the latest ApplicationManifest that contains settings values from the earlier (current) version. 
 
@@ -29,6 +29,6 @@ Note that if your current config files contain elements that the new (latest, ta
 
 **Make sure you run this utility over both ApplicationManifest and Settings XML files as new settings added to latest ApplicationManifest will also be present in the latest Settings.xml file.** 
 
-``` DiffPatchXmlSF "C:\repos\FO\3.1.17\configs\Settings.xml" "C:\repos\FO\3.1.18\configs\Settings.xml" ``` 
+``` XmlDiffPatchSF "C:\repos\FO\3.1.17\configs\Settings.xml" "C:\repos\FO\3.1.18\configs\Settings.xml" ``` 
 
 It should be easy to run this utility in a devops workflow. 
