@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2AC4F67C-015B-4655-AF8A-0A4285AA7067}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DiffXmlPatchSF</RootNamespace>
-    <AssemblyName>DiffXmlPatchSF</AssemblyName>
+    <RootNamespace>XmlDiffPatchSF</RootNamespace>
+    <AssemblyName>XmlDiffPatchSF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
