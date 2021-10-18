@@ -27,4 +27,8 @@ The above command produces a patched version of the latest ApplicationManifest t
 
 Note that if your current config files contain elements that the new (latest, target) file does not, then they will be carried over. This is to support FO Plugins and their related configuration settings in Settings.xml and ApplicationManifest.xml.
 
+**Make sure you run this utility over both ApplicationManifest and Settings XML files as new settings added to latest ApplicationManifest will also be present in the latest Settings.xml file.** 
+
+``` DiffPatchXmlSF "C:\repos\FO\3.1.17\configs\Settings.xml" "C:\repos\FO\3.1.18\configs\Settings.xml" ``` 
+
 It should be easy to run this utility in a devops workflow. 
