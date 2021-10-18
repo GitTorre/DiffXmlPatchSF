@@ -27,7 +27,7 @@ You can optionally provide a third parameter which is the full path to the patch
 
 The above command produces a patched version of the latest ApplicationManifest that contains settings values from the earlier (current) version. 
 
-Note that if your current config files contain elements that the new (latest, target) file does not, then they will be carried over. This is to support FO Plugins and their related configuration settings in Settings.xml and ApplicationManifest.xml.
+Note that if your current config files contain elements that the new (latest, target) file does not, then they will be carried over. This is to support FabricObserver Plugins and their related configuration settings in Settings.xml and ApplicationManifest.xml. This tool was written to primarily support FabricObserver customers given how often new releaes of FO are released and the changes that take place in its configuration files. That said, you can see how easy it would be to change this utility to support a wide range of application configurations (XML-based).
 
 **Make sure you run this utility over both ApplicationManifest and Settings XML files as new settings added to latest ApplicationManifest will also be present in the latest Settings.xml file.** 
 
