@@ -1,4 +1,4 @@
-# DiffPatchXmlSF
+# XmlDiffPatchSF
 
 Simple command line utility based on an old Microsoft diff/patch tool, XmlDiffPatch, that will diff/patch one version of a Service Fabric configuration file (ApplicationManifest.xml or Settings.xml) into another, later version, preserving setting values of the earlier version.
 This makes it trivial to update a new version of an SF base app configuration file with the current settings you have established for an earlier version, removing the need to do this manually everytime these files are updated in a new release of some application. The patched file will include all the new settings for the latest version while preserving all of the old settings, assuming they exist in the new version.
