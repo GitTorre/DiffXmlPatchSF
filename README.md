@@ -7,7 +7,7 @@ As mentioned above, today this just supports ApplicationManifest.xml and Setting
 
 This utility employs the old-yet-still-used-by-many XML diff/patch tool [XmlDiffPatch](https://www.nuget.org/packages/XMLDiffPatch/). 
 
-XmlDiffPatchSF built as a .NET Desktop (Windows-only) console application.
+XmlDiffPatchSF is built as a .NET Framework (v472) (Windows-only) console application.
 
 ### Usage
 
