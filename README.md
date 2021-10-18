@@ -25,4 +25,6 @@ You can optionally provide a third parameter which is the full path to the patch
 
 The above command produces a patched version of the latest ApplicationManifest that contains settings values from the earlier (current) version. 
 
+Note that if your current config files contain elemements that the new file does not, they will be carried over. This is to support FO Plugins and their related configuration settings in Settings.xml and ApplicationManifest.xml.
+
 It should be easy to run this utility in a devops workflow. 
