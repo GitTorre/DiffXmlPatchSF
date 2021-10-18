@@ -5,7 +5,9 @@ This makes it trivial to update a new version of an SF base app configuration fi
 
 As mentioned above, today this just supports ApplicationManifest.xml and Settings.xml files, but can very easily be extended to support other XML files you use for SF application configuration. 
 
-This utility requires the Windows-only nuget package [XmlDiffPatch](https://www.nuget.org/packages/XMLDiffPatch/).
+This utility employs the old yet still-used-by-many XML diff/patch tool [XmlDiffPatch](https://www.nuget.org/packages/XMLDiffPatch/). 
+
+XmlDiffPatchSF is a .NET Desktop (Windows-only) console application.
 
 ### Usage
 
