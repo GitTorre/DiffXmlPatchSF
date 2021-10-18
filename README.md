@@ -10,7 +10,7 @@ This utility employs the old-yet-still-used-by-many XML diff/patch tool [XmlDiff
 
 XmlDiffPatchSF is built as a .NET Framework (v472) (Windows-only) console application.  
 
-**This tool was written to primarily support FabricObserver customers given how often new releases of FO are made available and the changes that can take place in its latest configuration files.** 
+**This tool was written to primarily support FabricObserver customers given how often new releases of FO are made available and the changes that can take place in its latest configuration files, but any SF application is supported, of course.** 
 
 ### Usage
 
