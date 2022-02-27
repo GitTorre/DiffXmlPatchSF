@@ -95,7 +95,13 @@ namespace DiffPatchXmlSF
             // xd:change -> match -> @Value is for Settings.xml settings values.
             // xd:remove enables bringing over existing elements from source config (current) - like for plugins - to the target config (latest).
             xdoc.Root.Descendants(xd + "remove").Remove();
-            xdoc.Root.Descendants(xd + "change").Where(n => n.Attribute("match").Value == "@DefaultValue" || n.Attribute("match").Value == "@Value")?.Remove();
+            xdoc.Root.Descendants(xd + "change")
+                        .Where(n => 
+                                  n.Attribute("match").Value == "@DefaultValue" ||
+                                  n.Attribute("match").Value == "@Value" ||
+                                  n.Attribute("match").Value == "@EntryPointType" ||
+                                  n.Attribute("match").Value == "@X509FindValue")?.Remove();
+
             xdoc.Save(diffGramFilePath);
 
             PatchXml(currentVersionFilePath, diffGramFilePath, patchedFilePath);
