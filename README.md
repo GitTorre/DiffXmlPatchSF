@@ -1,6 +1,6 @@
 # XmlDiffPatchSF
 
-**NOTE: This repo is located in the [Microsoft FabricObserver repo](https://github.com/microsoft/service-fabric-observer). It is no longer maintained at this location (GitTorre).**
+**NOTE: This repo is located in the [Microsoft FabricObserver repo](https://github.com/microsoft/service-fabric-observer/tree/develop/XmlDiffPatchSF). It is no longer maintained at this location (GitTorre).**
 
 Simple command line utility that will diff/patch one version of a Service Fabric configuration file (ApplicationManifest.xml or Settings.xml) into another, later version, preserving setting values of the earlier version. 
 
